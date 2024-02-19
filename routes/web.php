@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\AutenticarController;
+use App\Http\Controllers\TiendaController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +15,16 @@ use Inertia\Inertia;
 |
 */
 
+// Apartado de la tienda
+Route::get("/", [TiendaController::class, "mostrarInicio"])->name("inicio");
+Route::get("/iniciar-sesion", [TiendaController::class, "mostrarInicioSesion"])->name("iniciar.sesion");
+Route::get("/registrar", [TiendaController::class, "mostrarRegistro"])->name("registrar");
+Route::get("/carrito", [TiendaController::class, "mostrarCarrito"])->name("carrito");
+
+// Autenticación
+Route::post("/registrar/nuevo-usuario", [AutenticarController::class, "registrarUsuario"])->name("registrar.usuario");
+
+/*
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -36,3 +45,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+*/
