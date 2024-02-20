@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+    infdig:
+        build:
+            context: ./infdig
+            dockerfile: Dockerfile
+        environment:
+            DB_HOST: db
+            DB_PORT: 3300
+            DB_DATABASE: 'tienda'
+            DB_USERNAME: 'root'
+            DB_PASSWORD: ''
+        ports:
+            - '8000:8000'
+        volumes:
+            - ./infdig:/app/informatica-digital
+        depends_on:
+            - db
+        network_mode:
+            -app
+    db:
+        image: mysql:5.7.22

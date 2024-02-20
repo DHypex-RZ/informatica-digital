@@ -20,9 +20,12 @@ Route::get("/", [TiendaController::class, "mostrarInicio"])->name("inicio");
 Route::get("/iniciar-sesion", [TiendaController::class, "mostrarInicioSesion"])->name("iniciar.sesion");
 Route::get("/registrar", [TiendaController::class, "mostrarRegistro"])->name("registrar");
 Route::get("/carrito", [TiendaController::class, "mostrarCarrito"])->name("carrito");
+Route::get("/perfil", [TiendaController::class, "mostrarPerfil"])->name("perfil");
 
 // Autenticación
 Route::post("/registrar/nuevo-usuario", [AutenticarController::class, "registrarUsuario"])->name("registrar.usuario");
+Route::post("/iniciar-sesion/auntenticando", [AutenticarController::class, "autenticarUsuario"])->name("autenticar");
+Route::post("/cerrar-sesion", [AutenticarController::class, "cerrarSesionUsuario"])->name("cerrar.sesion");
 
 /*
 Route::get('/', function () {

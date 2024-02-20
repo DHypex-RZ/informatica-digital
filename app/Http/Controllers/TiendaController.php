@@ -8,13 +8,12 @@ use Inertia\Response as InertiaResponse;
 
 class TiendaController extends Controller
 {
-    public function mostrarInicio(): InertiaResponse
+    public function mostrarInicio($logout = false): InertiaResponse
     {
         $productos = DB::table("productos")->get();
 
-
         return Inertia::render("Inicio", [
-            "productos" => $productos
+            "productos" => $productos,
         ]);
     }
 
@@ -28,8 +27,13 @@ class TiendaController extends Controller
         return Inertia::render("Registro");
     }
 
-    public function mostrarCarrito()
+    public function mostrarCarrito(): InertiaResponse
     {
         return Inertia::render("Carrito");
+    }
+
+    public function mostrarPerfil(): InertiaResponse
+    {
+        return Inertia::render("Perfil");
     }
 }

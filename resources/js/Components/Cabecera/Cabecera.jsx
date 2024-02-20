@@ -1,8 +1,8 @@
 import {Button, Navbar, NavbarBrand, NavbarContent, NavbarItem} from "@nextui-org/react";
-import {Link, usePage} from "@inertiajs/react";
+import {Link, router, usePage} from "@inertiajs/react";
 
 export default function Cabecera() {
-    const {url} = usePage()
+    const {props} = usePage()
     return (
         <Navbar maxWidth={"xl"}>
             <NavbarBrand>
@@ -15,16 +15,35 @@ export default function Cabecera() {
                 <NavbarItem>
                     <Link href={route("carrito")}>Carrito</Link>
                 </NavbarItem>
-                <NavbarItem>
-                    <Button color={"primary"} as={Link} href={route("iniciar.sesion")}>
-                        Iniciar sesión
-                    </Button>
-                </NavbarItem>
-                <NavbarItem>
-                    <Button color={"default"} as={Link} href={route("registrar")}>
-                        Registrarse
-                    </Button>
-                </NavbarItem>
+                {props.auth.user != null ? (
+                    <>
+                        <NavbarItem>
+                            <Link href={route("perfil")}>Perfil</Link>
+                        </NavbarItem>
+                        <NavbarItem>
+                            <Button color={"danger"} variant={"flat"} onClick={() => {
+                                router.post(route("cerrar.sesion"))
+                            }}>
+                                Cerrar sesión
+                            </Button>
+                        </NavbarItem>
+                    </>
+
+                ) : (
+                    <>
+                        <NavbarItem>
+                            <Button color={"primary"} as={Link} href={route("iniciar.sesion")}>
+                                Iniciar sesión
+                            </Button>
+                        </NavbarItem>
+                        <NavbarItem>
+                            <Button color={"default"} as={Link} href={route("registrar")}>
+                                Registrarse
+                            </Button>
+                        </NavbarItem>
+                    </>
+                )}
+
             </NavbarContent>
         </Navbar>
     )

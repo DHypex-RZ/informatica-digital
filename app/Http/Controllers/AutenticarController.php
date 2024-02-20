@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 
 class AutenticarController extends Controller
 {
-    public function autenticarUsuario(Request $request): JsonResponse
+    public function autenticarUsuario(Request $request): RedirectResponse
     {
         $rules = [
             "email" => "required|email",
@@ -21,26 +21,15 @@ class AutenticarController extends Controller
 
         $validator = Validator::make($request->input(), $rules);
         if ($validator->fails()) {
-            return response()->json([
-                "status" => false,
-                "errors" => $validator->errors()->all(),
-            ], 400);
+            return to_route("iniciar.sesion");
         }
 
         if (!Auth::attempt($request->only("email", "password"))) {
-            return response()->json([
-                "status" => false,
-                "message" => "No autorizado",
-            ], 401);
+            return to_route("iniciar.sesion");
+
         }
 
-        $usuario = User::where("email", $request->input("email"))->first();
-        return response()->json([
-            "status" => true,
-            "message" => "Usuario logueado correctamente",
-            "data" => $usuario,
-            "token" => $usuario->createToken("API TOKEN")->plainTextToken
-        ], 202);
+        return to_route("inicio");
     }
 
     public function registrarUsuario(Request $request): RedirectResponse
@@ -67,12 +56,9 @@ class AutenticarController extends Controller
         return to_route("inicio");
     }
 
-    public function cerrarSesionUsuario(): JsonResponse
+    public function cerrarSesionUsuario(): RedirectResponse
     {
-        auth()->user()->tokens()->delete();
-        return response()->json([
-            "status" => true,
-            "message" => "Cierre de sesión correcto",
-        ], 202);
+        Auth::logout();
+        return to_route("inicio");
     }
 }
