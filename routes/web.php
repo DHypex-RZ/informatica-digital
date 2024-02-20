@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AutenticarController;
+use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\TiendaController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,7 @@ Route::get("/iniciar-sesion", [TiendaController::class, "mostrarInicioSesion"])-
 Route::get("/registrar", [TiendaController::class, "mostrarRegistro"])->name("registrar");
 Route::get("/carrito", [TiendaController::class, "mostrarCarrito"])->name("carrito");
 Route::get("/perfil", [TiendaController::class, "mostrarPerfil"])->name("perfil");
+Route::post("/carrito/agregar-producto", [CarritoController::class, "agregarProducto"])->name("agregar.carrito");
 
 // Autenticación
 Route::post("/registrar/nuevo-usuario", [AutenticarController::class, "registrarUsuario"])->name("registrar.usuario");

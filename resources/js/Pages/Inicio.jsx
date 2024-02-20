@@ -8,7 +8,7 @@ export default function Inicio({productos}) {
             <Head title={"Informática Digital"}/>
             <Cabecera/>
             <div
-                className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-2 mx-4 justify-center items-center ">
+                className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-5 mx-4 justify-center items-center ">
                 {productos.map((producto, id) => <Producto key={id} producto={producto}/>)}
             </div>
         </>

@@ -1,10 +1,10 @@
 import {Button, Card, CardBody, CardFooter, CardHeader, Image} from "@nextui-org/react";
 import {useState} from "react";
+import {router} from "@inertiajs/react";
 
 export default function Producto({producto}) {
     const [compra, setCompra] = useState({
         cantidad: 0,
-        precio: producto.precio,
         producto: producto.id
     })
 
@@ -14,6 +14,12 @@ export default function Producto({producto}) {
             ...compra,
             cantidad: cantidad
         }))
+    }
+
+    function agregarAlCarrito() {
+        if (compra.cantidad !== 0) {
+            router.post(route("agregar.carrito"), compra)
+        }
     }
 
     return (
@@ -35,8 +41,8 @@ export default function Producto({producto}) {
                         type={"number"} min={0} max={producto.cantidad} className="rounded-2xl mr-4" defaultValue={0}
                         onChange={cambiarCantidad}
                     />
-                    <Button color={"secondary"} variant={"bordered"}
-                            onClick={() => console.log(compra)}>Comprar</Button>
+                    <Button color={"secondary"} variant={"bordered"} type={"button"}
+                            onClick={agregarAlCarrito}>Comprar</Button>
                 </div>
             </CardFooter>
         </Card>

@@ -4,7 +4,7 @@ import {Link, router, usePage} from "@inertiajs/react";
 export default function Cabecera() {
     const {props} = usePage()
     return (
-        <Navbar maxWidth={"xl"}>
+        <Navbar maxWidth={"lg"}>
             <NavbarBrand>
                 <h1 className="text-4xl cursor-default">Informática Digital</h1>
             </NavbarBrand>
