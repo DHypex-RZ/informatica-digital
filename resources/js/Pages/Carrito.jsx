@@ -1,12 +1,14 @@
 import Cabecera from "@/Components/Cabecera/Cabecera.jsx";
 import {Head} from "@inertiajs/react";
+import LineaProducto from "@/Components/Producto/LineaProducto.jsx";
 
-export default function Carrito() {
+export default function Carrito({productos, importeTotal}) {
     return (
         <>
             <Head title={"Carrito"}/>
             <Cabecera/>
-            <h1>Hola este es el Carrito</h1>
+            {productos.map((producto, id) => <LineaProducto key={id} producto={producto}/>)}
+            <p>{importeTotal}€</p>
         </>
     )
 }

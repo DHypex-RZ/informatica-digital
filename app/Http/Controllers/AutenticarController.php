@@ -71,13 +71,13 @@ class AutenticarController extends Controller
         ]);
 
         DB::table("carritos")->insert([
-            "cliente" => $request->input("dni")
+            "dni" => $request->input("dni")
         ]);
 
         return to_route("inicio");
     }
 
-    public function cerrarSesionUsuario(): RedirectResponse
+    public function cerrarSesionUsuario(Request $request): RedirectResponse
     {
         Auth::logout();
         return to_route("inicio");
