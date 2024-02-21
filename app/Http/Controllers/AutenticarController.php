@@ -26,8 +26,16 @@ class AutenticarController extends Controller
 
         if (!Auth::attempt($request->only("email", "password"))) {
             return to_route("iniciar.sesion");
-
         }
+
+        $carrito = DB::table("carritos as c")
+            ->select(["c.id"])
+            ->join("datos_cliente as d", function ($join) {
+                $join->on("d.dni", "=", "c.dni")
+                    ->where("d.usuario", "=", Auth::user()->getAuthIdentifier());
+            })->first();
+
+        session(["carrito" => $carrito->id]);
 
         return to_route("inicio");
     }
@@ -70,9 +78,11 @@ class AutenticarController extends Controller
             "cp" => $request->input("cp")
         ]);
 
-        DB::table("carritos")->insert([
+        $idCarrito = DB::table("carritos")->insertGetId([
             "dni" => $request->input("dni")
         ]);
+
+        session(["carrito" => $idCarrito]);
 
         return to_route("inicio");
     }
@@ -80,6 +90,7 @@ class AutenticarController extends Controller
     public function cerrarSesionUsuario(Request $request): RedirectResponse
     {
         Auth::logout();
+        session(["carrito" => null]);
         return to_route("inicio");
     }
 }
