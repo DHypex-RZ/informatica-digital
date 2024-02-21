@@ -4,7 +4,7 @@ import {router} from "@inertiajs/react";
 
 export default function Producto({producto}) {
     const [compra, setCompra] = useState({
-        cantidad: 0,
+        cantidad: 1,
         producto: producto.id
     })
 
@@ -18,7 +18,7 @@ export default function Producto({producto}) {
 
     function agregarAlCarrito() {
         if (compra.cantidad !== 0) {
-            router.post(route("agregar.carrito"), compra)
+            router.post(route("agregar.carrito"), compra, {preserveScroll: true})
         }
     }
 
@@ -38,7 +38,7 @@ export default function Producto({producto}) {
                 <p>{producto.precio}€</p>
                 <div className="flex justify-end items-center w-full">
                     <input
-                        type={"number"} min={0} max={producto.cantidad} className="rounded-2xl mr-4" defaultValue={0}
+                        type={"number"} min={0} max={producto.cantidad} className="rounded-2xl mr-4" defaultValue={1}
                         onChange={cambiarCantidad}
                     />
                     <Button color={"secondary"} variant={"bordered"} type={"button"}

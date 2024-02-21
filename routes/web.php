@@ -20,8 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::get("/", [TiendaController::class, "mostrarInicio"])->name("inicio");
 Route::get("/iniciar-sesion", [TiendaController::class, "mostrarInicioSesion"])->name("iniciar.sesion");
 Route::get("/registrar", [TiendaController::class, "mostrarRegistro"])->name("registrar");
-Route::get("/carrito", [TiendaController::class, "mostrarCarrito"])->name("carrito");
 Route::get("/perfil", [TiendaController::class, "mostrarPerfil"])->name("perfil");
+
+// Apartado del carrito
+Route::get("/carrito", [CarritoController::class, "mostrarCarrito"])->name("carrito");
 Route::post("/carrito/agregar-producto", [CarritoController::class, "agregarProducto"])->name("agregar.carrito");
 
 // Autenticación
