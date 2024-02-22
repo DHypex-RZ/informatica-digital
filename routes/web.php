@@ -25,6 +25,7 @@ Route::get("/perfil", [TiendaController::class, "mostrarPerfil"])->name("perfil"
 // Apartado del carrito
 Route::get("/carrito", [CarritoController::class, "mostrarCarrito"])->name("carrito");
 Route::post("/carrito/agregar-producto", [CarritoController::class, "agregarProducto"])->name("agregar.carrito");
+Route::post("/realizar-compra", [CarritoController::class, "realizarCompra"])->name("realizar.compra");
 
 // Autenticación
 Route::post("/registrar/nuevo-usuario", [AutenticarController::class, "registrarUsuario"])->name("registrar.usuario");

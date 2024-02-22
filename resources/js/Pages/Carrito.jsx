@@ -1,5 +1,5 @@
 import Cabecera from "@/Components/Cabecera/Cabecera.jsx";
-import {Head, usePage} from "@inertiajs/react";
+import {Head, router, usePage} from "@inertiajs/react";
 import LineaProducto from "@/Components/Producto/LineaProducto.jsx";
 import {Button} from "@nextui-org/react";
 
@@ -9,6 +9,8 @@ export default function Carrito({productos, importeTotal}) {
     function realizarCompra() {
         if (props.auth.user == null) {
             alert("Para realizar una compra, inicie sesión")
+        }else {
+            router.post(route("realizar.compra"))
         }
     }
 

@@ -1,0 +1,94 @@
+{
+  "_Cabecera-eBSfN-w_.js": {
+    "file": "assets/Cabecera-eBSfN-w_.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_Campo-CwCw3F0T.js": {
+    "file": "assets/Campo-CwCw3F0T.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_chunk-BJUMDPFJ-Ca4ft3FC.js": {
+    "file": "assets/chunk-BJUMDPFJ-Ca4ft3FC.js",
+    "imports": [
+      "_Cabecera-eBSfN-w_.js",
+      "resources/js/app.jsx"
+    ]
+  },
+  "_chunk-OFGZKCFR-DlvsgRie.js": {
+    "file": "assets/chunk-OFGZKCFR-DlvsgRie.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Cabecera-eBSfN-w_.js"
+    ]
+  },
+  "resources/js/Pages/Carrito.jsx": {
+    "file": "assets/Carrito-B6jGx7wy.js",
+    "src": "resources/js/Pages/Carrito.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_Cabecera-eBSfN-w_.js",
+      "_chunk-OFGZKCFR-DlvsgRie.js"
+    ]
+  },
+  "resources/js/Pages/Inicio.jsx": {
+    "file": "assets/Inicio-DWmNERq2.js",
+    "src": "resources/js/Pages/Inicio.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_chunk-BJUMDPFJ-Ca4ft3FC.js",
+      "_chunk-OFGZKCFR-DlvsgRie.js",
+      "_Cabecera-eBSfN-w_.js"
+    ]
+  },
+  "resources/js/Pages/Login.jsx": {
+    "file": "assets/Login-Dj3JTxvS.js",
+    "src": "resources/js/Pages/Login.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_Cabecera-eBSfN-w_.js",
+      "_Campo-CwCw3F0T.js"
+    ]
+  },
+  "resources/js/Pages/Perfil.jsx": {
+    "file": "assets/Perfil-B2vZfSgy.js",
+    "src": "resources/js/Pages/Perfil.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_Cabecera-eBSfN-w_.js",
+      "_chunk-BJUMDPFJ-Ca4ft3FC.js"
+    ]
+  },
+  "resources/js/Pages/Registro.jsx": {
+    "file": "assets/Registro-nwJq9AyA.js",
+    "src": "resources/js/Pages/Registro.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_Cabecera-eBSfN-w_.js",
+      "_Campo-CwCw3F0T.js"
+    ]
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-qgDmQCzW.js",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Carrito.jsx",
+      "resources/js/Pages/Inicio.jsx",
+      "resources/js/Pages/Login.jsx",
+      "resources/js/Pages/Perfil.jsx",
+      "resources/js/Pages/Registro.jsx"
+    ],
+    "css": [
+      "assets/app-DQH6IU9H.css"
+    ]
+  }
+}

@@ -28,11 +28,6 @@ class TiendaController extends Controller
         return Inertia::render("Registro");
     }
 
-    public function mostrarCarrito(): InertiaResponse
-    {
-        return Inertia::render("Carrito");
-    }
-
     public function mostrarPerfil(): InertiaResponse
     {
         $usuario = DB::table("users as u")
@@ -40,11 +35,15 @@ class TiendaController extends Controller
             ->join("datos_cliente as d", function ($join) {
                 $join->on("d.usuario", "=", "u.id")
                     ->where("u.id", "=", Auth::user()->getAuthIdentifier());
-            })
-            ->first();
+            })->first();
+
+        $pedidos = DB::table("pedidos")
+            ->where("dni", "=", $usuario->dni)
+            ->get();
 
         return Inertia::render("Perfil", [
-            "usuario" => $usuario
+            "usuario" => $usuario,
+            "pedidos" => $pedidos
         ]);
     }
 }

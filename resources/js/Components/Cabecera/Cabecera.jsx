@@ -6,7 +6,7 @@ export default function Cabecera() {
     return (
         <Navbar maxWidth={"lg"}>
             <NavbarBrand>
-                <h1 className="text-4xl cursor-default">Informática Digital</h1>
+                <h1 className="text-4xl cursor-default hidden sm:hidden md:block lg:block xl:block">Informática Digital</h1>
             </NavbarBrand>
             <NavbarContent justify={"center"}>
                 <NavbarItem>
