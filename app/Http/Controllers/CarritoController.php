@@ -60,13 +60,25 @@ class CarritoController extends Controller
             $carrito = DB::table("carritos")->select(["id"])->where("id", "=", $idCarrito)->first();
         }
 
-        DB::table("lineas_carrito")
-            ->insert([
-                "carrito" => $carrito->id,
-                "producto" => $producto->id,
-                "cantidad" => $request->input("cantidad"),
-                "importe" => $importeTotal
-            ]);
+        $productoEnCarrito = DB::table("lineas_carrito")->where("producto", "=", $producto->id)->first();
+
+        if ($productoEnCarrito == null) {
+            DB::table("lineas_carrito")
+                ->insert([
+                    "carrito" => $carrito->id,
+                    "producto" => $producto->id,
+                    "cantidad" => $request->input("cantidad"),
+                    "importe" => $importeTotal
+                ]);
+        } else {
+            DB::table("lineas_carrito")
+                ->where("producto", "=", $producto->id)
+                ->update([
+                    "cantidad" => $productoEnCarrito->cantidad + $request->input("cantidad"),
+                    "importe" => $productoEnCarrito->importe + $importeTotal
+                ]);
+        }
+
 
         session(["carrito" => $carrito->id]);
 

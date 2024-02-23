@@ -42,7 +42,7 @@ export default function Producto({producto}) {
                         onChange={cambiarCantidad}
                     />
                     <Button color={"secondary"} variant={"bordered"} type={"button"}
-                            onClick={agregarAlCarrito}>Comprar</Button>
+                            onClick={agregarAlCarrito}>Añadir al carrito</Button>
                 </div>
             </CardFooter>
         </Card>

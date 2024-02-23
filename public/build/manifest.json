@@ -1,83 +1,83 @@
 {
-  "_Cabecera-eBSfN-w_.js": {
-    "file": "assets/Cabecera-eBSfN-w_.js",
+  "_Cabecera-DJ4yDv9p.js": {
+    "file": "assets/Cabecera-DJ4yDv9p.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_Campo-CwCw3F0T.js": {
-    "file": "assets/Campo-CwCw3F0T.js",
+  "_Campo-DvMthchY.js": {
+    "file": "assets/Campo-DvMthchY.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_chunk-BJUMDPFJ-Ca4ft3FC.js": {
-    "file": "assets/chunk-BJUMDPFJ-Ca4ft3FC.js",
+  "_chunk-BJUMDPFJ-BmgPDc9m.js": {
+    "file": "assets/chunk-BJUMDPFJ-BmgPDc9m.js",
     "imports": [
-      "_Cabecera-eBSfN-w_.js",
+      "_Cabecera-DJ4yDv9p.js",
       "resources/js/app.jsx"
     ]
   },
-  "_chunk-OFGZKCFR-DlvsgRie.js": {
-    "file": "assets/chunk-OFGZKCFR-DlvsgRie.js",
+  "_chunk-OFGZKCFR-BhVuiiOL.js": {
+    "file": "assets/chunk-OFGZKCFR-BhVuiiOL.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Cabecera-eBSfN-w_.js"
+      "_Cabecera-DJ4yDv9p.js"
     ]
   },
   "resources/js/Pages/Carrito.jsx": {
-    "file": "assets/Carrito-B6jGx7wy.js",
+    "file": "assets/Carrito-BBMZCZyY.js",
     "src": "resources/js/Pages/Carrito.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Cabecera-eBSfN-w_.js",
-      "_chunk-OFGZKCFR-DlvsgRie.js"
+      "_Cabecera-DJ4yDv9p.js",
+      "_chunk-OFGZKCFR-BhVuiiOL.js"
     ]
   },
   "resources/js/Pages/Inicio.jsx": {
-    "file": "assets/Inicio-DWmNERq2.js",
+    "file": "assets/Inicio-C0I10MHI.js",
     "src": "resources/js/Pages/Inicio.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_chunk-BJUMDPFJ-Ca4ft3FC.js",
-      "_chunk-OFGZKCFR-DlvsgRie.js",
-      "_Cabecera-eBSfN-w_.js"
+      "_chunk-BJUMDPFJ-BmgPDc9m.js",
+      "_chunk-OFGZKCFR-BhVuiiOL.js",
+      "_Cabecera-DJ4yDv9p.js"
     ]
   },
   "resources/js/Pages/Login.jsx": {
-    "file": "assets/Login-Dj3JTxvS.js",
+    "file": "assets/Login-C3_afgMC.js",
     "src": "resources/js/Pages/Login.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Cabecera-eBSfN-w_.js",
-      "_Campo-CwCw3F0T.js"
+      "_Cabecera-DJ4yDv9p.js",
+      "_Campo-DvMthchY.js"
     ]
   },
   "resources/js/Pages/Perfil.jsx": {
-    "file": "assets/Perfil-B2vZfSgy.js",
+    "file": "assets/Perfil-DZJzZfVV.js",
     "src": "resources/js/Pages/Perfil.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Cabecera-eBSfN-w_.js",
-      "_chunk-BJUMDPFJ-Ca4ft3FC.js"
+      "_Cabecera-DJ4yDv9p.js",
+      "_chunk-BJUMDPFJ-BmgPDc9m.js"
     ]
   },
   "resources/js/Pages/Registro.jsx": {
-    "file": "assets/Registro-nwJq9AyA.js",
+    "file": "assets/Registro-Iw-RSkv9.js",
     "src": "resources/js/Pages/Registro.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Cabecera-eBSfN-w_.js",
-      "_Campo-CwCw3F0T.js"
+      "_Cabecera-DJ4yDv9p.js",
+      "_Campo-DvMthchY.js"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-qgDmQCzW.js",
+    "file": "assets/app-CsgEUSZZ.js",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "dynamicImports": [
